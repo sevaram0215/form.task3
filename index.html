@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+    <div>
+        <nav class="navbar">
+            <div class="title">Rajasthan Universcity</div>
+            <a href="#" class="span">
+                <span class="bar">@Instagram</span> <br>
+                <span class="bar">@Google</span><br>
+                <span class="bar">@Facebook</span><br>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div>
+        <form id="form">
+            <div id="heading"></div>
+            <label>Name:-</label><br />
+            <input type="text" placeholder="enter your name" /> <br /><br />
+            <label for="">City:-</label><br />
+            <input name="" id="city" placeholder="enter city name" /><br /><br />
+            <label for="">Mobile:-</label><br />     
+            <input name="" id="mobile" placeholder="enter mobile" /><br /><br />
+            <label for="">Date of Birth:-</label><br />     
+            <input type="date" placeholder="enter mobile" /><br /><br />
+            <label for="pet-select">State:-</label><br>
+      
+            <select id="select">
+              <option value="">--Please choose an option--</option>
+              <option value="dog">Rajasthan</option>
+              <option value="cat">Gujrat</option>
+              <option value="hamster">Himachal </option>
+              <option value="parrot">bihar</option>
+              
+            </select>
+            <br><br>
+            <label for="">Details:-</label><br />
+            <input id="text" type="textarea" placeholder="text area" /><br /><br />
+            <!-- <button id="btn">submit</button> -->
+          </form>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+   
+  </body>
+  <script>
+    let heading = document.getElementById("heading");
+    let h1 = document.createElement("h1");
+    h1.innerText = "Registration Form";
+
+    heading.append(h1);
+    let form = document.getElementById("form");
+    let button = document.createElement("button");
+    button.innerText = "Submit";
+    form.append(button);
+
+    let arr = JSON.parse(localStorage.getItem("userdata")) || [];
+
+    // let form= document.getElementById("form")
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", getValue);
+    function getValue(event) {
+      event.preventDefault();
+      let obj = {
+        name: document.getElementById("name").value,
+        city: document.getElementById("city").value,
+      };
+      arr.push(obj);
+      localStorage.setItem;
+      console.log(arr);
+      form.reset();
+    }
+  </script>
+</html>
