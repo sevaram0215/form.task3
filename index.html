@@ -92,7 +92,8 @@
         city: document.getElementById("city").value,
       };
       arr.push(obj);
-      localStorage.setItem;
+      localStorage.setItem("user",JSON.stringify(arr))
+     
       console.log(arr);
       form.reset();
     }
